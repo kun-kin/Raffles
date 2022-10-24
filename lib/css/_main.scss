@@ -1,0 +1,863 @@
+.banner {
+    &-slide {
+        .item {
+            position: relative;
+            &::before {
+                content: '';
+                position: absolute;
+                top: 0;
+                right: 0;
+                bottom: 0;
+                left: 0;
+                background: #2c2c2c;
+                opacity: .020;
+            }
+            &::after {
+                content: '';
+                position: absolute;
+                top: 0;
+                right: 0;
+                bottom: 0;
+                left: 0;
+                background: linear-gradient(to bottom, rgba(0, 0, 0, 0.3) 0, rgba(44, 44, 44, 0) 100%);
+                height: 50%;
+            }
+            img {
+                max-width: 100%;
+                height: auto;
+                transition: opacity .35s;
+                position: relative;
+            }
+            @media(min-width: 768px) {
+                max-height: 900px;
+                // height: calc(100vh - 108px);
+                height:auto;
+            }
+        }
+        .slick-arrow {
+            z-index: 1;
+        }
+        .slick-prev {
+            left: 20px;
+            &::before {
+                content: "\f053";
+                font-family: fontawesome;
+                font-size: 48px;
+                color: #fff;
+            }
+        }
+        .slick-next {
+            right: 20px;
+            &::before {
+                content: "\f054";
+                font-family: fontawesome;
+                font-size: 48px;
+                color: #fff;
+            }
+        }
+        // @media(max-width:767.98px) {
+        //     min-height: 520px;
+        // }
+    }
+}
+
+.reservation-widget {
+    @media(max-width: 767.98px) {
+        display: none;
+    }
+}
+
+.reservation-wrap {
+    position: relative;
+    background: #fff;
+    min-height: 100px;
+    margin: -50px auto 0;
+    z-index: 0;
+    max-width: 1176px;
+    box-shadow: 0 4px 8px 0 rgb(0 0 0 / 30%);
+    &-content {
+        &>div {
+            padding: 14px 0 14px 24px;
+            input,
+            select,
+            button {
+                width: 100%;
+                border: 0;
+                background-color: transparent;
+                text-align: left;
+                color: var(--primary-color);
+                font-weight: 500;
+                font: 1.2rem "ralewaymedium";
+                letter-spacing: 1px;
+            }
+        }
+        .booking-btn-wrapper {
+            button {
+                margin: 0 auto;
+                background: #666;
+                display: block;
+                text-align: center;
+                color: #fff;
+                text-transform: uppercase;
+                font-size: 1.4rem;
+                line-height: 24px;
+                border: 0;
+                min-height: 56px;
+                width: 184px;
+                font-style: normal;
+                font-weight: 500;
+                letter-spacing: 1.1px;
+            }
+        }
+    }
+}
+
+.reservation-widget {
+    label {
+        font: 1.2rem/26px "ralewaysemibold";
+        letter-spacing: 3px;
+        text-transform: uppercase;
+        display: block;
+        color: #2c2c2c;
+        margin: 0;
+        word-break: break-word;
+    }
+}
+
+.pattern-property-wrap {
+    @media(min-width: 768px) {
+        background-image: url('../../images/pattern-pr.png');
+        background-repeat: repeat-y;
+        background-position: center center;
+        background-color: #fafafa;
+    }
+}
+
+.about {
+    &-content {
+        font: 2.142857142857143em/4.4rem 'butlerlight';
+        p {
+            font-size: 1em;
+            @media(min-width: 1025px) {
+                font-size: 3rem;
+            }
+        }
+    }
+    @media(min-width: 1025px) {
+        padding-top: 50px;
+    }
+}
+
+.about .about-content {
+    @media(max-width: 1024.98px) {
+        font-family: butlerlight, sans-serif;
+        font-size: 1.3529411764705883em;
+        letter-spacing: 2px;
+        margin-top: 10px;
+        padding: 15px;
+        line-height: 35px;
+    }
+    @media(max-width:767.98px) {
+        padding: 0;
+    }
+}
+
+.room-suits {
+    margin-top: 50px;
+    &-wrapper {
+        width: 100%;
+        padding: 0;
+        max-height: 499px;
+        height: 100%;
+        position: relative;
+        margin-top: 12px;
+        .room-suits-list {
+            height: 100%;
+            width: 100%;
+            position: relative;
+            max-height: 506px;
+            overflow: hidden;
+            .item {
+                &:hover {
+                    .overlay-text {
+                        &::before,
+                        &::after {
+                            opacity: 1;
+                            width: 100%;
+                        }
+                    }
+                }
+            }
+            .slick-arrow {
+                width: 60px;
+                height: 60px;
+                z-index: 1;
+            }
+            .slick-prev {
+                left: 90px;
+                &::before {
+                    content: '\f053';
+                    font-family: fontawesome;
+                    font-size: 60px;
+                    color: #fff;
+                }
+                @media(max-width:767.98px) {
+                    left: 0;
+                }
+            }
+            .slick-next {
+                right: 90px;
+                &::before {
+                    content: '\f054';
+                    font-family: fontawesome;
+                    font-size: 60px;
+                    color: #fff;
+                }
+                @media(max-width:767.98px) {
+                    right: 0;
+                }
+            }
+        }
+        .slick-active {
+            position: relative;
+            margin-left: 5px;
+            margin-right: 5px;
+            .overlay-content {
+                width: 100%;
+                height: 100%;
+                background: rgba(0, 0, 0, 0.2);
+                color: #fff;
+                z-index: 5;
+            }
+        }
+        .overlay-text {
+            position: absolute;
+            transition: all .2s ease-in-out;
+            left: 50%;
+            top: 50%;
+            transform: translate(-50%, -50%);
+            &::before,
+            &::after {
+                content: "";
+                position: absolute;
+                bottom: -10px;
+                width: 0;
+                height: 5px;
+                margin: 5px 0 0;
+                transition: all .2s ease-in-out;
+                transition-duration: .75s;
+                opacity: 0;
+            }
+            &::after {
+                left: 0;
+                background-color: #fff;
+            }
+            .hotel-name {
+                font-size: .857em;
+                line-height: 2em;
+                text-transform: uppercase;
+                display: block;
+                letter-spacing: 3px;
+                position: relative;
+                opacity: 0;
+            }
+        }
+        .slick-current {
+            .overlay-text {
+                .hotel-name {
+                    opacity: 1;
+                }
+            }
+        }
+    }
+}
+
+.bounce-up {
+    .bounce-element {
+        @media(min-width: 768px) {
+            opacity: 0;
+            transition: all 700ms ease-out;
+            transform: translate3d(0px, 200px, 0px);
+            backface-visibility: hidden;
+        }
+    }
+    &.in-view {
+        .bounce-element {
+            @media(min-width: 768px) {
+                opacity: 1;
+                transform: translate3d(0px, 0px, 0px);
+            }
+        }
+    }
+}
+
+.animation-element {
+    &.slide-right {
+        @media(min-width: 1400px) {
+            overflow: hidden;
+        }
+    }
+}
+
+.factsheet-just {
+    margin-top: 50px;
+    .offer-btn {
+        position: relative;
+        margin: 50px auto 0;
+        display: inline-block;
+        width: 100%;
+        .button-inner {
+            width: 213px;
+            min-height: 59px;
+            margin: 0 auto;
+            border: 1px solid #4b4b4b;
+            display: block;
+            text-align: center;
+            text-transform: uppercase;
+            font: .857em/59px 'ralewaysemibold';
+            letter-spacing: 3px;
+            color: #2c2c2c;
+            cursor: pointer;
+            position: relative;
+            overflow: hidden;
+            z-index: 2;
+            font-weight: 600;
+            &::before {
+                content: '';
+                position: absolute;
+                top: 0;
+                right: 0;
+                bottom: 0;
+                left: 0;
+                background-color: #666;
+                -webkit-transform: translateX(-100%);
+                transform: translateX(-100%);
+                transition: .5s ease-in-out;
+                z-index: -1;
+            }
+            &:hover {
+                color: #fff;
+                text-decoration: none;
+                &::before {
+                    transform: translate(0);
+                }
+            }
+        }
+    }
+}
+
+.just-for-you-wrapper {
+    .just-wrap {
+        .offer-content-list {
+            margin-right: 8px;
+            background-color: #fff;
+            a {
+                color: #666;
+                overflow: hidden;
+                width: 100%;
+                position: relative;
+                display: inline-block;
+                z-index: 1;
+                .img-wrap {
+                    width: 100%;
+                    height: 0;
+                    background-size: cover;
+                    background-repeat: no-repeat;
+                    background-position: center center;
+                    padding-bottom: 75.25%;
+                    margin-bottom: 22px;
+                    img {
+                        width: 100%;
+                    }
+                }
+                .content-wrap {
+                    padding: 0 20px 20px;
+                    h3.offers-heading {
+                        font-size: 2rem;
+                        letter-spacing: 3px;
+                        line-height: 3.6rem;
+                        color: #2c2c2c;
+                        margin-top: 0;
+                        margin-bottom: 0;
+                        font-weight: bold;
+                        cursor: pointer;
+                        font-family: "raleway";
+                        @media(min-width: 1025px) {
+                            max-width: 200px;
+                            margin: 0 auto;
+                            display: block;
+                            overflow: hidden;
+                            &::after {
+                                border-bottom: 3px solid #2c2c2c;
+                                content: '';
+                                display: block;
+                                position: relative;
+                                transition: width .3s ease-in-out;
+                                width: 0;
+                            }
+                        }
+                    }
+                    .offers-text {
+                        font-size: 1em;
+                        letter-spacing: 2px;
+                        line-height: 2.08em;
+                        color: #666;
+                        padding: 0;
+                        margin: 0;
+                    }
+                    @media(min-width: 768px) {
+                        min-height: 330px;
+                    }
+                }
+                p {
+                    &:last-child {
+                        padding-top: 30px;
+                        width: 94%;
+                    }
+                }
+                &:hover {
+                    text-decoration: none;
+                    h3.offers-heading {
+                        &::after {
+                            width: 100%;
+                        }
+                    }
+                }
+            }
+            &.middle-offer {
+                @media(min-width: 768px) {
+                    margin-top: 88px;
+                }
+            }
+            @media(min-width: 768px) {
+                margin-right: 0;
+                margin-top: 5px;
+            }
+            @media(min-width:1025px) {
+                margin-right: 0;
+            }
+        }
+    }
+}
+
+.breakaway-paris {
+    margin-top: 50px;
+    background-repeat: no-repeat;
+    background-position: -135px 7px;
+    // background-position: 110% 7px;
+    background-image: url('../../images/bg-design.png');
+}
+
+.brakaway-desc {
+    width: 46%;
+    margin: 0 auto;
+    @media(max-width: 1024px) {
+        width: 100%;
+    }
+}
+
+.trip-advisor-gallery,
+.breakwayGallery {
+    width: 100%;
+    float: right;
+    max-width: 1050px;
+}
+
+.breakwayGallery {
+    a {
+        display: block;
+        position: relative;
+    }
+    .break-slide {
+        max-width: 100%;
+        width: 100%;
+        .slick-prev,
+        .slick-next {
+            top: 90%;
+            width: 40px;
+            height: 40px;
+            z-index: 1;
+            &::before {
+                color: #000;
+            }
+            @media(max-width: 767.98px) {
+                top: 25%;
+                &::before {
+                    color: #fff;
+                }
+            }
+        }
+        .slick-prev {
+            left: -9.6%;
+            &::before {
+                content: '\f053';
+                font-family: fontawesome;
+                font-size: 45px;
+            }
+            @media(max-width:767.98px) {
+                left: 0;
+            }
+        }
+        .slick-next {
+            right: 102%;
+            &::before {
+                content: '\f054';
+                font-family: fontawesome;
+                font-size: 45px;
+            }
+            @media(max-width:767.98px) {
+                right: 0;
+            }
+        }
+    }
+    .break-item {
+        background-color: #fff;
+        .break-content {
+            padding: 40px 30px;
+            display: flex;
+            flex-direction: column;
+            .breakaway-title {
+                font-family: ralewaymedium, sans-serif;
+                padding: 0;
+                margin: 0;
+                font-size: 1em;
+                letter-spacing: 3px;
+                line-height: 36px;
+                color: #2c2c2c;
+                margin-top: 0;
+                margin-bottom: 0;
+                .breakaway-heading {
+                    width: 100%;
+                    display: inline-block;
+                    text-align: center;
+                    font-size: 2rem;
+                    letter-spacing: 3px;
+                    line-height: 36px;
+                    color: #2c2c2c;
+                    font-family: 'raleway';
+                    font-weight: bold;
+                    cursor: pointer;
+                    @media(min-width: 1025px) {
+                        max-width: 200px;
+                        margin: 0 auto;
+                        display: block;
+                        overflow: hidden;
+                        &::after {
+                            border-bottom: 3px solid #2c2c2c;
+                            content: '';
+                            display: block;
+                            position: relative;
+                            transition: width .3s ease-in-out;
+                            width: 0;
+                        }
+                    }
+                }
+                .break-subtitle {
+                    font-size: 1em;
+                    letter-spacing: 2px;
+                    line-height: 2.08em;
+                    color: #666;
+                    padding: 0;
+                    margin: 0;
+                    font-family: ralewaymedium, sans-serif;
+                }
+                .brakaway-descriptions {
+                    padding-top: 30px;
+                    width: 94%;
+                    color: #666;
+                    letter-spacing: normal;
+                    font-size: 1em;
+                    font-family: ralewaymedium, sans-serif;
+                }
+            }
+            .brakaway-descriptions {
+                padding-top: 30px;
+                width: 94%;
+                color: #666;
+                letter-spacing: normal;
+                font-size: 1em;
+                font-family: ralewaymedium, sans-serif;
+            }
+        }
+        &:hover {
+            .break-content {
+                .breakaway-title {
+                    .breakaway-heading {
+                        @media(min-width: 1025px) {
+                            &::after {
+                                width: 100%;
+                                left: 0;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+.factsheet-map-section {
+    @media(min-width: 1025px) {
+        margin-top: 50px;
+    }
+}
+
+.section-map {
+    position: relative;
+    width: 100%;
+    margin-bottom: 20px;
+}
+
+.factsheet-map {
+    width: 100%;
+    display: inline-block;
+}
+
+.staticmap {
+    position: relative;
+    text-align: center;
+    @media(min-width: 1025px) {
+        min-height: 45rem;
+        iframe {
+            min-height: 45rem;
+        }
+    }
+}
+
+.reviews-section {
+    width: 100%;
+    .reviews-section-header-global {
+        line-height: 0;
+        width: 100%;
+        .accor-ratings {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .trust-you-rating-reviews {
+            margin-bottom: 42px;
+            margin-top: 16px;
+            font-family: 'ralewayregular';
+            font-size: 14px;
+            font-weight: 500;
+            line-height: 24px;
+            letter-spacing: 1.100000023841858px;
+            text-align: center;
+            color: #666;
+        }
+    }
+}
+
+.subContent {
+    width: 100%;
+    position: relative;
+}
+
+.trustyou-rating-image {
+    margin: 0!important;
+    width: 68px;
+    height: 12px;
+    width: 68px!important;
+}
+
+.trust-you-gallery {
+    .reviews-slide {
+        .slick-slide {
+            float: left;
+            height: 100%;
+            min-height: 298px;
+            padding-left: 12px;
+            padding-right: 12px;
+        }
+        .review-item {
+            background: #fff;
+            min-height: 298px;
+            line-height: 0;
+            width: 100%;
+            display: inline-block;
+            &-inner {
+                padding: 40px 24px 24px;
+                border-left: none;
+                min-height: 298px;
+                margin-bottom: 0;
+                text-align: center;
+                .accor-ratings {
+                    display: inline-flex;
+                    align-items: center;
+                    justify-content: center;
+                    svg {
+                        margin-right: 5.81px;
+                    }
+                }
+            }
+        }
+        .slick-arrow {
+            top: 123%;
+            width: 41px;
+            height: 41px;
+            z-index: 1;
+            @media(max-width: 767.98px) {
+                top: 25%;
+            }
+        }
+        .slick-prev {
+            left: 93%;
+            @media(max-width: 767.98px) {
+                left: 0;
+            }
+        }
+        .slick-next {
+            right: 1%;
+            @media(max-width: 767.98px) {
+                right: 0;
+            }
+        }
+    }
+}
+
+.trust-review-title {
+    font-family: 'butlerlight';
+    font-size: 1.8rem;
+    font-weight: 400;
+    line-height: 24px;
+    letter-spacing: 0;
+    text-align: center;
+    margin: 40px 0 16px 0;
+    &::before {
+        content: '"';
+    }
+    &::after {
+        content: '"';
+    }
+}
+
+.trust-text-div {
+    height: 96px;
+    margin-bottom: 16px;
+}
+
+.trust-text {
+    font-family: 'ralewayregular';
+    font-size: 1.4rem;
+    font-weight: 500;
+    line-height: 24px;
+    letter-spacing: 0;
+    text-align: center;
+    margin-bottom: 16px;
+    max-height: 96px;
+    overflow: hidden;
+    color: #666;
+}
+
+div[aria-labelledby=modal-review-container] {
+    background: rgb(51 51 51 / 50%);
+    .modal-dialog {
+        margin: 0 auto;
+        width: 507px;
+        min-height: auto;
+        .modal-header {
+            border-bottom: none;
+            button {
+                width: 40px;
+                height: 40px;
+                background: #666;
+                color: white;
+                font-size: x-large;
+                font-weight: normal;
+                margin: 0px 0px 0px auto!important;
+                float: right;
+                border: 0;
+            }
+        }
+        .modal-body {
+            padding: 24px 24px 32px;
+            background: 0;
+            line-height: 0;
+            .trust-you-popin-date {
+                font-family: 'ralewayregular';
+                font-size: 1.2rem;
+                font-weight: 400;
+                line-height: 16px;
+                letter-spacing: 0;
+                text-align: left;
+                color: #666;
+                margin-bottom: 0;
+            }
+            .accor-ratings {
+                display: flex;
+                align-items: center;
+                margin-top: 8px;
+                justify-content: flex-start;
+                svg {
+                    margin-right: 5.81px;
+                }
+            }
+            .trust-you-popin-review-title {
+                margin-bottom: 8px;
+            }
+        }
+        @media(min-width: 1025px) {
+            margin-top: 185px;
+        }
+        @media(min-width:576px) {
+            max-width: none;
+        }
+    }
+}
+
+.trust-you-popin-review-title {
+    font-family: 'butlerlight';
+    font-size: 3rem;
+    font-weight: 400;
+    line-height: 40px;
+    letter-spacing: 0;
+    text-align: left;
+    color: #2C2C2C;
+    margin-top: 24px;
+    margin-bottom: 16px;
+}
+
+p.trust-you-popin-review-text {
+    font-family: 'ralewayregular'!important;
+    font-size: 1.4rem;
+    font-weight: 500;
+    line-height: 24px;
+    letter-spacing: 0;
+    text-align: left;
+    color: #666!important;
+    margin-bottom: 0!important;
+}
+
+.modal-content p {
+    margin-bottom: 40px;
+    font-size: 1.4rem;
+    line-height: 24px;
+    font-family: 'ralewaymedium';
+    font-weight: 500;
+    color: #393939;
+}
+
+//contact
+.form-contact {
+    text-align: left;
+    .form-group {
+        label {
+            display: block;
+            strong {
+                color: red;
+            }
+        }
+        .form-control {
+            width: 100%;
+            font-size: 1.2em;
+        }
+        input.form-control {
+            height: 40px;
+        }
+        .btn-submit-contact {
+            margin-top: 15px;
+            padding: 10px 10px;
+            font-size: 1.2em;
+        }
+    }
+}
